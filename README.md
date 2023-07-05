@@ -35,7 +35,7 @@ O proprietário deste repositório não assume nenhuma responsabilidade por quai
 
 ## Contato
 
-Se você tiver alguma dúvida relacionada à propriedade dos códigos ou precisar entrar em contato com Guilherme Santiago, envie um e-mail para guilhermesantiago@email.com.
+Se você tiver alguma dúvida relacionada à propriedade dos códigos ou precisar entrar em contato com Guilherme Santiago, envie um e-mail para miotello487@email.com.
 
 Agradecemos por respeitar os termos de uso e por sua compreensão. Aproveite o aplicativo de armazenamento de dados/produtos!
 
