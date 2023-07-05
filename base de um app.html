@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logística App</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Logística App - Tabelas</h1>
+    <h2>Tabela de Usuário</h2>
+    <table id="usuarioTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Os dados serão adicionados dinamicamente com JavaScript -->
+        </tbody>
+    </table>
+
+    <h2>Tabela de Gaylord</h2>
+    <table id="gaylordTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Capacidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Os dados serão adicionados dinamicamente com JavaScript -->
+        </tbody>
+    </table>
+
+    <h2>Tabela de Pedido</h2>
+    <table id="pedidoTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Usuário</th>
+                <th>Produto</th>
+                <th>Destino</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Os dados serão adicionados dinamicamente com JavaScript -->
+        </tbody>
+    </table>
+
+    <h2>Tabela de Produto</h2>
+    <table id="produtoTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Os dados serão adicionados dinamicamente com JavaScript -->
+        </tbody>
+    </table>
+
+    <h2>Tabela de Destino</h2>
+    <table id="destinoTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Endereço</th>
+                <th>Cidade</th>
+                <th>País</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Os dados serão adicionados dinamicamente com JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        // Exemplo de dados estáticos para preencher as tabelas
+        var usuarios = [
+            { id: 1, nome: "Usuário 1", email: "usuario1@example.com", telefone: "123456789" },
+            { id: 2, nome: "Usuário 2", email: "usuario2@example.com", telefone: "987654321" }
+        ];
+
+        var gaylords = [
+            { id: 1, nome: "Gaylord 1", descricao: "Descrição 1", capacidade: 10 },
+            { id: 2, nome: "Gaylord 2", descricao: "Descrição 2", capacidade: 20 }
+        ];
+
+        var pedidos = [
+            { id: 1, usuario: "Usuário 1", produto: "Produto 1", destino: "Destino 1", status: "Pendente" },
+            { id: 2, usuario: "Usuário 2", produto: "Produto 2", destino: "Destino 2", status: "Entregue" }
+        ];
+
+        var produtos = [
+            { id: 1, nome: "Produto 1", preco: 10.99 },
+            { id: 2, nome: "Produto 2", preco: 20.99 }
+        ];
+
+        var destinos = [
+            { id: 1, endereco: "Endereço 1", cidade: "Cidade 1", pais: "País 1" },
+            { id: 2, endereco: "Endereço 2", cidade: "Cidade 2", pais: "País 2" }
+        ];
+
+        // Função para preencher as tabelas com os dados
+        function fillTable(tableId, data) {
+            var table = document.getElementById(tableId);
+            var tbody = table.getElementsByTagName("tbody")[0];
+            tbody.innerHTML = "";
+
+            for (var i = 0; i < data.length; i++) {
+                var row = document.createElement("tr");
+
+                for (var key in data[i]) {
+                    var cell = document.createElement("td");
+                    cell.textContent = data[i][key];
+                    row.appendChild(cell);
+                }
+
+                tbody.appendChild(row);
+            }
+        }
+
+        // Preencher as tabelas com os dados
+        fillTable("usuarioTable", usuarios);
+        fillTable("gaylordTable", gaylords);
+        fillTable("pedidoTable", pedidos);
+        fillTable("produtoTable", produtos);
+        fillTable("destinoTable", destinos);
+    </script>
+</body>
+</html>
