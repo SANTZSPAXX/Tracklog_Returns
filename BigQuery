@@ -1,24 +1,30 @@
-from google.cloud import bigquery
+const { BigQuery } = require('@google-cloud/bigquery');
 
-project_id = "seu-project-id"
-source_dataset_id = "dataset-original"
-source_table_id = "tabela-original"
-destination_dataset_id = "dataset-destino"
-destination_table_id = "tabela-destino"
+const project_id = 'seu-project-id';
+const source_dataset_id = 'dataset-original';
+const source_table_id = 'tabela-original';
+const destination_dataset_id = 'dataset-destino';
+const destination_table_id = 'tabela-destino';
 
-client = bigquery.Client(project=project_id)
+async function copyTable() {
+  const bigquery = new BigQuery({ projectId: project_id });
 
-source_table_ref = client.dataset(source_dataset_id).table(source_table_id)
-destination_table_ref = client.dataset(destination_dataset_id).table(destination_table_id)
+  const sourceTableRef = bigquery.dataset(source_dataset_id).table(source_table_id);
+  const destinationTableRef = bigquery.dataset(destination_dataset_id).table(destination_table_id);
 
-job_config = bigquery.CopyJobConfig()
+  const copyJobOptions = {
+    createDisposition: 'CREATE_IF_NEEDED',
+    writeDisposition: 'WRITE_EMPTY',
+  };
 
-copy_job = client.copy_table(
-    source_table_ref,
-    destination_table_ref,
-    job_config=job_config
-)
+  const [job] = await bigquery
+    .dataset(destination_dataset_id)
+    .table(destination_table_id)
+    .copy(sourceTableRef, copyJobOptions);
 
-copy_job.result()
+  await job.getMetadata(); // Wait for the job to complete
 
-print("Cópia da tabela concluída com sucesso!")
+  console.log('Cópia da tabela concluída com sucesso!');
+}
+
+copyTable().catch(console.error);
