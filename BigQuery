@@ -1,0 +1,24 @@
+from google.cloud import bigquery
+
+project_id = "seu-project-id"
+source_dataset_id = "dataset-original"
+source_table_id = "tabela-original"
+destination_dataset_id = "dataset-destino"
+destination_table_id = "tabela-destino"
+
+client = bigquery.Client(project=project_id)
+
+source_table_ref = client.dataset(source_dataset_id).table(source_table_id)
+destination_table_ref = client.dataset(destination_dataset_id).table(destination_table_id)
+
+job_config = bigquery.CopyJobConfig()
+
+copy_job = client.copy_table(
+    source_table_ref,
+    destination_table_ref,
+    job_config=job_config
+)
+
+copy_job.result()
+
+print("Cópia da tabela concluída com sucesso!")
