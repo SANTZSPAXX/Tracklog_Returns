@@ -11,6 +11,28 @@ CC0 1.0 Universal
     THE USE OF THIS DOCUMENT OR THE INFORMATION OR WORKS PROVIDED
     HEREUNDER.
 
+Git Usage License
+
+This document represents a usage license agreement for Git, a source code version control platform. The license is granted free of charge, provided that it is used for non-profit purposes and does not involve direct or indirect resale of Git.
+
+Terms and Conditions:
+
+Free Usage: The granted license allows for the free usage of Git, as long as it is for non-profit purposes. Any commercial or for-profit use of Git requires a separate commercial license.
+
+Ownership of Codes: Any codes provided through Git belong exclusively to Guilherme Santiago unless they are from third parties, such as platforms or open-source code libraries with their own licenses. In such cases, the respective licenses of those third parties apply.
+
+Distribution: The distribution of codes provided by Guilherme Santiago through Git is permitted, as long as it is for non-profit purposes and the copyright notices and ownership information are kept intact.
+
+Modifications: Users are permitted to modify the codes provided by Guilherme Santiago, as long as the modifications are for personal use or non-profit purposes. The distribution of modifications requires prior written permission from Guilherme Santiago.
+
+Liability: Guilherme Santiago assumes no responsibility for any damages or issues arising from the use of Git. The user assumes full responsibility for the proper and safe use of the software.
+
+Support and Updates: This license does not include technical support or automatic updates for Git. However, Guilherme Santiago may provide voluntary support and updates at their discretion.
+
+Termination: Guilherme Santiago reserves the right to terminate this usage license at any time if the terms and conditions are violated. In case of termination, the user must immediately cease the use of Git and destroy all copies of the provided codes.
+
+By using Git, you agree to comply with all the terms and conditions of this usage license. If you do not agree with these terms, you are not authorized to use Git. Continued use of Git after any modifications to this license constitutes acceptance of the modified terms.
+
 Statement of Purpose
 
 The laws of most jurisdictions throughout the world automatically confer
